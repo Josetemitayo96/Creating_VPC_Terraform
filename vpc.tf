@@ -31,6 +31,7 @@ resource "aws_subnet" "terraformpublicsubnet" {
     vpc_id = aws_vpc.tfvpc.id
     cidr_block = "10.0.1.0/25"
     availability_zone = "us-east-1b"
+    map_public_ip_on_launch = "true"
     tags = {
         name = "tfpublicsubnet"
     }
@@ -42,6 +43,7 @@ resource "aws_subnet" "terraformprivatesubnet" {
     vpc_id = aws_vpc.tfvpc.id
     cidr_block = "10.0.2.0/25"
     availability_zone = "us-east-1b"
+     map_public_ip_on_launch = "false"
     tags = {
         name = "tfprivatesubnet"
     }
